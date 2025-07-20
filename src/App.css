@@ -1,22 +1,27 @@
 .app {
   padding: 2rem;
+  font-size: x-small;
   font-family: sans-serif;
-}
 
+}
+.goal-content{
+  display: inline-block;
+}
 .goal-card {
   border: 1px solid #ccc;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
   background-color: blueviolet;
+  height: fit-content;
 }
 
 .goal-card.warning {
-  background-color: #fff3cd;
+  background-color: #704e05;
 }
 
 .goal-card.overdue {
-  background-color: #f8d7da;
+  background-color: #2b1c01;
 }
 
 .status.warning {

@@ -16,7 +16,7 @@ function App() {
 
   // useEffect hook to fetch goals when the component mounts.
   useEffect(() => {
-    // Fetch goals from the API.
+    // Fetch goals from the API
     fetchGoals()
       .then((res) => {
         // On success, update the goals state with the fetched data.
