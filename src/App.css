@@ -1,0 +1,40 @@
+.app {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.goal-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background-color: blueviolet;
+}
+
+.goal-card.warning {
+  background-color: #fff3cd;
+}
+
+.goal-card.overdue {
+  background-color: #f8d7da;
+}
+
+.status.warning {
+  color: #856404;
+}
+
+.status.overdue {
+  color: #721c24;
+}
+
+@media (max-width: 600px) {
+  .goal-card, .form, .overview {
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+}
+progress {
+  transition: width 0.3s ease-in-out;
+}
+
+
