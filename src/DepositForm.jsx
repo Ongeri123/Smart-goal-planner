@@ -20,7 +20,7 @@ function DepositForm({ goals, setGoals }) {
     const updatedGoal = {
       savedAmount: Number(goal.savedAmount) + Number(amount)
     };
-    // Use a try...catch block for the asynchronous API call.
+    // Use a try...catch block for the asynchronous API call
     try {
       // Call the API to update the goal on the server.
       const res = await updateGoal(selected, updatedGoal);

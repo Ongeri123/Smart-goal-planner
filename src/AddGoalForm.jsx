@@ -12,7 +12,7 @@ function AddGoalForm({ setGoals }) {
 
   function handleChange(e) {
     // This function is called every time a user types in an input field.
-    // It updates the corresponding property in the formData state.
+    // It updates the corresponding property in the formData state
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
