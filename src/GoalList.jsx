@@ -9,7 +9,7 @@ function GoalList({ goals, onDeleteGoal }) {
       {goals.map((goal) => (
         // For each goal in the array, render a GoalCard component.
         // The 'key' prop is essential for React to efficiently update the list.
-        // Pass the individual 'goal' object and the 'onDeleteGoal' handler down to the card.
+        // Pass the individual 'goal' object and the 'onDeleteGoal' handler down to the card
         <GoalCard key={goal.id} goal={goal} onDeleteGoal={onDeleteGoal} />
       ))}
     </div>

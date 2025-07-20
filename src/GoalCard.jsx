@@ -26,22 +26,24 @@ function GoalCard({ goal, onDeleteGoal }) {
     // Dynamically apply CSS classes based on the goal's status.
     <div className={`goal-card ${overdue ? "overdue" : warning ? "warning" : ""}`}>
         {/* The delete button calls the handler passed down from App.jsx. */}
-        <button className="delete-btn" onClick={() => onDeleteGoal(goal.id)}>
-          🗑️
-        </button>
-        <h3>{name} <span>({category})</span></h3>
-        <p>Target: ${targetAmount}</p>
-        <p>Saved: ${savedAmount}</p>
-        {/* Display the remaining amount or a celebration emoji if complete. */}
-        <p>Remaining: ${remainingAmount > 0 ? `$${remainingAmount}` : "🎉"}</p>
-        <p>Deadline: {dayjs(deadline).format("YYYY-MM-DD")} ({daysLeftText})</p>
-        {/* A progress bar to visually represent completion. */}
-        <progress value={savedAmount} max={targetAmount}></progress>
-        <p>{completion}% complete</p>
-        {/* Conditionally render status messages. */}
-        {overdue && <p className="status overdue">🚨 Overdue</p>}
-        {warning && <p className="status warning">⚠️ Deadline approaching</p>}
-        {completed && !overdue && <p className="status completed">✅ Completed!</p>}
+        <div className="goal-content">
+            <h3>{name} <span>({category})</span></h3>
+            <p>Target: ${targetAmount}</p>
+            <p>Saved: ${savedAmount}</p>
+            {/* Display the remaining amount or a celebration emoji if complete */}
+            <p>Remaining: ${remainingAmount > 0 ? `$${remainingAmount}`: "🎉"}</p>
+            <p>Deadline: {dayjs(deadline).format("YYYY-MM-DD")} ({daysLeftText})</p>
+            {/* A progress bar to visually represent completion. */}
+            <progress value={savedAmount} max={targetAmount}></progress>
+            <p>{completion}% complete</p>
+            {/* Conditionally render status messages. */}
+            {overdue && <p className="status overdue"> Overdue</p>}
+            {warning && <p className="status warning">Deadline approaching</p>}
+            {completed && !overdue && <p className="status completed"> Completed!</p>}
+            <button className="delete-btn" onClick={() => onDeleteGoal(goal.id)}>
+            🗑️ Delete
+                </button>
+        </div>
      </div>
   );
 }
