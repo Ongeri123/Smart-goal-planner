@@ -3,7 +3,7 @@ import { addGoal } from "./Services/goalApi";
 
 function AddGoalForm({ setGoals }) {
   const [formData, setFormData] = useState({
-    // This state holds the current values of the form inputs.
+   
     name: "",
     targetAmount: "",
     category: "",
@@ -11,8 +11,6 @@ function AddGoalForm({ setGoals }) {
   });
 
   function handleChange(e) {
-    // This function is called every time a user types in an input field.
-    // It updates the corresponding property in the formData state
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
@@ -39,7 +37,6 @@ function AddGoalForm({ setGoals }) {
       // Clear the form for the next entry.
       setFormData({ name: "", targetAmount: "", category: "", deadline: "" });
     } catch (err) {
-      // If the API call fails, log the error to the console.
       console.error("Failed to add goal:", err);
     }
   }

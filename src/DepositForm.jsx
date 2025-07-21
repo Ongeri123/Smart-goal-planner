@@ -20,11 +20,11 @@ function DepositForm({ goals, setGoals }) {
     const updatedGoal = {
       savedAmount: Number(goal.savedAmount) + Number(amount)
     };
-    // Use a try...catch block for the asynchronous API call
+    
     try {
       // Call the API to update the goal on the server.
       const res = await updateGoal(selected, updatedGoal);
-      // On success, update the goals list in the parent App component.
+      
       // It maps over the old goals and replaces the updated one.
       setGoals(goals.map(g => g.id === selected ? res.data : g));
       // Reset the form fields.

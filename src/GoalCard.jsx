@@ -6,7 +6,7 @@ function GoalCard({ goal, onDeleteGoal }) {
   // Destructure properties from the goal object for easier access.
   const { name, category, targetAmount, savedAmount, deadline } = goal;
 
-  // Calculate the completion percentage. Math.min ensures it doesn't exceed 100%.
+ 
   const completion = Math.min(Math.round((savedAmount / targetAmount) * 100), 100);
   // Calculate the amount still needed to reach the target.
   const remainingAmount = targetAmount - savedAmount;
