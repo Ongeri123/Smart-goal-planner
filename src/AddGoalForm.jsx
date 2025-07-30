@@ -29,7 +29,7 @@ function AddGoalForm({ setGoals }) {
       createdAt: new Date().toISOString()
     };
 
-    // A try...catch block to handle the asynchronous API call.
+    // A try catch block to handle the asynchronous API call.
     try {
       const res = await addGoal(newGoal);
       // On success, update the goals list in the parent App component.
@@ -46,7 +46,17 @@ function AddGoalForm({ setGoals }) {
     <form onSubmit={handleSubmit}>
       <input name="name" value={formData.name} onChange={handleChange} placeholder="Goal name" required />
       <input name="targetAmount" type="number" value={formData.targetAmount} onChange={handleChange} placeholder="Target $" required />
-      <input name="category" value={formData.category} onChange={handleChange} placeholder="Category" />
+      <select name="category" value={formData.category} onChange={handleChange} required>
+        <option value="">Select Category</option>
+        <option value="Travel">Travel</option>
+        <option value="Emergency">Emergency</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Real Estate">Real Estate</option>
+        <option value="Vehicle">Vehicle</option>
+        <option value="Education">Education</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Retirement">Retirement</option>
+      </select>
       <input name="deadline" type="date" value={formData.deadline} onChange={handleChange} required />
       <button type="submit">➕ Add Goal</button>
     </form>

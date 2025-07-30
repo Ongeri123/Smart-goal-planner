@@ -1,8 +1,20 @@
-import axios from "axios";
+export const fetchGoals = async () => {
+  const response = await fetch('/db.json');
+  const data = await response.json();
+  return { data: data.goals };
+};
 
-const BASE_URL = "http://localhost:3000/goals";
+export const addGoal = (goal) => {
+  console.log('Add goal (static mode):', goal);
+  return Promise.resolve({ data: { id: Date.now().toString(), ...goal } });
+};
 
-export const fetchGoals = () => axios.get(BASE_URL);
-export const addGoal = (goal) => axios.post(BASE_URL, goal);
-export const updateGoal = (id, updates) => axios.patch(`${BASE_URL}/${id}`, updates);
-export const deleteGoal = (id) => axios.delete(`${BASE_URL}/${id}`);
+export const updateGoal = (id, updates) => {
+  console.log('Update goal (static mode):', id, updates);
+  return Promise.resolve({ data: { id, ...updates } });
+};
+
+export const deleteGoal = (id) => {
+  console.log('Delete goal (static mode):', id);
+  return Promise.resolve({ data: { id } });
+};
